@@ -7,23 +7,22 @@
 
 class OptimalPassiveSearch: public MyFunction
 	{
-		long double top_edge;					     // ������� ������� �������
-		long double bottom_edge;					 // ������ ������� �������
-		long double delta;						     // ��������
-		std::pair<long double, long double> point;
-		std::chrono::nanoseconds timer;	         // ����� ���������� ������������ ���������
+		long double top_edge;			 // Верхняя граница отрезка
+		long double bottom_edge;		 // Нижняя граница отрезка
+		long double delta;			 // Точность
+		std::chrono::nanoseconds timer;	         // Время нахождения оптимального интервала
 		public:
 
-
-			// ������� �����������
+			
+			// Обычный конструктор
 			OptimalPassiveSearch(long double bottom, long double top, long double e = 0.1);
 
 			~OptimalPassiveSearch()
 			{}
 
-			// ������� ��������� �����������
+			// Функция вычисляет погрешность
 			double length_of_undefined_segment(int N);
 
-			// ������� �������� ��� ����������� ����������
+			// Функция проводит все необходимые вычисления
 			void pass();
 	};
