@@ -1,3 +1,7 @@
+![status bar](https://travis-ci.org/DarthBarada/TSIS-LAB01.svg?branch=master)
+![Code size](https://img.shields.io/github/languages/code-size/DarthBarada/TSIS-LAB01.svg)
+![GitHub Repo size](https://img.shields.io/github/repo-size/DarthBarada/TSIS-LAB01.svg)
+![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)
 # Лабораторная работа № 1
 # Исследование методов прямого поиска экстремума унимодальной функции одного переменного
 ## Цель работы
