@@ -7,10 +7,11 @@
 
 class OptimalPassiveSearch: public MyFunction
 	{
-		long double top_edge;			 // Верхняя граница отрезка
-		long double bottom_edge;		 // Нижняя граница отрезка
-		long double delta;			 // Точность
-		std::chrono::nanoseconds timer;	         // Время нахождения оптимального интервала
+		long double top_edge;			   // Верхняя граница отрезка
+		long double bottom_edge;		   // Нижняя граница отрезка
+		long double delta;			   // Точность
+		std::pair<long double, long double> point; // Конечная точка и интервал
+		std::chrono::nanoseconds timer;	           // Время нахождения оптимального интервала
 		public:
 
 			
