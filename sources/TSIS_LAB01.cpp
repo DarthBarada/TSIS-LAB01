@@ -1,4 +1,3 @@
-﻿#include "pch.h"
 #include <iostream>
 #include "OptimalPassiveSearch.h"
 #include "GoldrenSection.h"
