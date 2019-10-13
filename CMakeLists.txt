@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(
   ${PROJECT_NAME}
+  STATIC
   ${CMAKE_CURRENT_SOURCE_DIR}/sources/GoldrenSection.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/sources/OptimalPassiveSearch.cpp
 )
@@ -22,5 +23,7 @@ add_executable(main ./sources/TSIS_LAB01.cpp)
 target_include_directories(
 main
 PUBLIC
- ${PROJECT_NAME}
+ ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+
+ target_link_libraries(main ${PROJECT_NAME})
