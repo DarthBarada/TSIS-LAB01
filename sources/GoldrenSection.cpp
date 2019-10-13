@@ -1,5 +1,5 @@
 #include "GoldrenSection.h"
-
+#include <iomanip>
 GoldrenSection::GoldrenSection()
 	{
 		top_edge = 0.0;
@@ -62,15 +62,21 @@ void GoldrenSection::update_point2()
 void GoldrenSection::pass()
 	{
 		setlocale(LC_ALL, "RU");
-		std::cout <<std::left<<"\nМетод золотого сечения\n"
+		/*std::cout <<std::left<<"\nМетод золотого сечения\n"
 			<< "_______________________________________________________\n"
-			<< std::setw(13) << "" << "|" << std::setw(10) << "Длина" << "||" << std::setw(6) << "" << "|" << std::setw(6) << "" << "||" << std::setw(6) << "" << "|" << std::setw(6) << "" << "|\n"
-			<< std::setw(13) << "Интервал" << "|" << std::setw(10) << "интервала" << "||" << std::setw(6) << "X1" << "|" << std::setw(6) << "X2" << "||" << std::setw(6) << "F(X1)" << "|" << std::setw(6) << "F(X2)" << "|\n"
+			<< std::setw(13) << "" << "|" << std::setw(10) << "Длина" << "||" << std::setw(6) << " " << "|" << std::setw(6) << " " << "||" << std::setw(6) << " " << "|" << std::setw(6) << " " << "|\n"
+			<< std::setw(13)<<"Интервал" << "|" << std::setw(10) << "интервала" << "||" << std::setw(6) << "X1" << "|" << std::setw(6) << "X2" << "||" << std::setw(6) << "F(X1)" << "|" << std::setw(6) << "F(X2)" << "|\n"
 			<< std::setw(13) << "_____________" << "|" << std::setw(10) << "__________" << "||" << std::setw(6) << "______" << "|" << std::setw(6) << "______" << "||" << std::setw(6) << "______" << "|" << std::setw(6) << "______" << "|\n"
-			<< std::setw(13) << ""			    << "|" << std::setw(10) << ""			<< "||" << std::setw(6) << ""		<< "|" << std::setw(6) << ""	   << "||" << std::setw(6) << ""	   << "|" << std::setw(6) << ""		  << "|\n";
+			<< std::setw(13) << ""			    << "|" << std::setw(10) << ""			<< "||" << std::setw(6) << ""		<< "|" << std::setw(6) << ""	   << "||" << std::setw(6) << ""	   << "|" << std::setw(6) << ""		  << "|\n";*/
+		std::cout <<std::left<<"\nGolden-section search\n"
+			<< " _________________________________________________________\n"
+			<<"|"<< std::setw(13) << "" 							<< "|" << std::setw(11) << "   Length" 	 << "||" << std::setw(6) << 	 " "	 << "|" << std::setw(6) << 		" "	  << "||" << std::setw(7) << 		" "		<< "|" << std::setw(7) << 	" "		 << "|\n"
+			<<"|"<<  std::setw(13) <<"   Interval"    << "|" << std::setw(11) << "of interval" << "||" << std::setw(6) << "  X1"   << "|" << std::setw(6) << "  X2"   << "||" << std::setw(7) << " F(X1)" << "|" << std::setw(7) << " F(X2)" << "|\n"
+			<<"|"<<  std::setw(13) << "_____________" << "|" << std::setw(11) << "___________" << "||" << std::setw(6) << "______" << "|" << std::setw(6) << "______" << "||" << std::setw(7) << "______" << "|" << std::setw(7) << "______" << "|\n"
+			<<"|"<<  std::setw(13) << ""			    		<< "|" << std::setw(11) << ""						 << "||" << std::setw(6) << ""			 << "|" << std::setw(6) << ""       << "||" << std::setw(7) << ""       << "|" << std::setw(7) << ""		   << "|\n";
 		auto start = std::chrono::high_resolution_clock::now();
 		int kol = 1;
-		std::cout << std::left <<"[" << std::setw(5) <<bottom_edge<<","<< std::setw(5)<<top_edge<<"]"<< "|" << std::setw(10) << interval << "||" << std::setw(6) << first_point.first << "|" << std::setw(6) << second_point.first << "||" << std::setw(6) << first_point.second << "|" << std::setw(6) << second_point.second << "|\n";
+		std::cout <<"|"<<  std::left <<"[" << std::setw(5) <<bottom_edge<<","<< std::setw(5)<<top_edge<<"]"<< "|" << std::setw(11) << interval << "||" << std::setw(6) << first_point.first << "|" << std::setw(6) << second_point.first << "||" << std::setw(7) << first_point.second << "|" << std::setw(7) << second_point.second << "|\n";
 		///					Первый шаг
 		if (first_point.second < second_point.second)
 			{
@@ -82,7 +88,7 @@ void GoldrenSection::pass()
 				update_point2();
 				update_point2();
 			}
-		std::cout << std::left << "[" << std::setw(5) << bottom_edge << "," << std::setw(5) << top_edge << "]" << "|" << std::setw(10) << interval << "||" << std::setw(6) << first_point.first << "|" << std::setw(6) << second_point.first << "||" << std::setw(6) << first_point.second << "|" << std::setw(6) << second_point.second << "|\n";
+		std::cout <<"|"<<  std::left << "[" << std::setw(5) << bottom_edge << "," << std::setw(5) << top_edge << "]" << "|" << std::setw(11) << interval << "||" << std::setw(6) << first_point.first << "|" << std::setw(6) << second_point.first << "||" << std::setw(7) << first_point.second << "|" << std::setw(7) << second_point.second << "|\n";
 		///					Второй шаг
 		while (interval >= delta)
 			{
@@ -101,15 +107,15 @@ void GoldrenSection::pass()
 					{
 						std::swap(second_point, first_point);
 					}
-				std::cout << std::left << "[" << std::setw(5) << bottom_edge << "," << std::setw(5) << top_edge << "]" << "|" << std::setw(10) << interval << "||" << std::setw(6) << first_point.first << "|" << std::setw(6) << second_point.first << "||" << std::setw(6) << first_point.second << "|" << std::setw(6) << second_point.second << "|\n";
+				std::cout <<"|"<<  std::left << "[" << std::setw(5) << bottom_edge << "," << std::setw(5) << top_edge << "]" << "|" << std::setw(11) << interval << "||" << std::setw(6) << first_point.first << "|" << std::setw(6) << second_point.first << "||" << std::setw(7) << first_point.second << "|" << std::setw(7) << second_point.second << "|\n";
 				kol++;
 			}
 		auto end = std::chrono::high_resolution_clock::now();
 		timer = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 
-		std::cout << "_______________________________________________________\n"
-			<<"Результат: " << bottom_edge + (top_edge - bottom_edge) / 2 << "\n"
-			<< "x* принадлежит [ " << bottom_edge << " , " << top_edge << " ] " << "\n"
+		std::cout <<"|"<< std::setw(13) << "_____________" << "|" << std::setw(11) << "___________" 	 << "||" << std::setw(6) <<"______"<< "|" << std::setw(6) <<"______"<< "||" << std::setw(7) <<"_______"<< "|" << std::setw(7) <<"_______"<< "|\n"
+			<<"Result: " << bottom_edge + (top_edge - bottom_edge) / 2 << "\n"
+			<< "x* belongs [ " << bottom_edge << " , " << top_edge << " ] " << "\n"
 			<< "--------------------------\n";;
-		std::cout << "Время нахождения: " << timer.count() << " ns\n\n";
+		std::cout << "Working time: " << timer.count() << " ns\n\n";
 	}

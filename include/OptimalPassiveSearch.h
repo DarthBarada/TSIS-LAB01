@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <iomanip>
 #include <map>
 #include <chrono>
 
@@ -8,22 +7,23 @@
 
 class OptimalPassiveSearch: public MyFunction
 	{
-		long double top_edge;					     // Верхняя граница отрезка
-		long double bottom_edge;					 // Нижняя граница отрезка
-		long double delta;						     // Точность
-		std::chrono::nanoseconds timer;	         // Время нахождения оптимального интервала
+		long double top_edge;					     // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		long double bottom_edge;					 // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		long double delta;						     // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		std::pair<long double, long double> point;
+		std::chrono::nanoseconds timer;	         // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		public:
 
-			
-			// Обычный конструктор
+
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			OptimalPassiveSearch(long double bottom, long double top, long double e = 0.1);
 
 			~OptimalPassiveSearch()
 			{}
 
-			// Функция вычисляет погрешность
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			double length_of_undefined_segment(int N);
 
-			// Функция проводит все необходимые вычисления
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			void pass();
 	};
