@@ -17,7 +17,7 @@ target_include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-add_executable(main ./sources/lab02.cpp)
+add_executable(main ./sources/TSIS_LAB01.cpp)
 
 target_include_directories(
 main
