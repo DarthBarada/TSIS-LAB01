@@ -6,7 +6,7 @@ OptimalPassiveSearch::OptimalPassiveSearch(long double bottom, long double top, 
 	{
 		top_edge = top; bottom_edge = bottom; delta = accuracy;
 
-		Value_N=double((top_edge-bottom_edge)/delta-1);
+		Value_N=double(((top_edge-bottom_edge)/delta)-1);
 	}
 
 double OptimalPassiveSearch::length_of_undefined_segment(int N)
@@ -14,7 +14,7 @@ double OptimalPassiveSearch::length_of_undefined_segment(int N)
 		return 2.0*(top_edge - bottom_edge) / (N + 1.0);
 	}
 
-void OptimalPassiveSearch::pass()
+void OptimalPassiveSearch::pass2()
 	{
 		double dotx = 0;
 		std::multimap< long double, std::pair<long double, long double>> function_results; //Контейнер упорядоченных значений для хранения значений функции
@@ -56,7 +56,7 @@ void OptimalPassiveSearch::pass()
 		std::cout << "Working time: " << timer.count() << " ns\n";
 	}
 
-	void OptimalPassiveSearch::pass2()
+	void OptimalPassiveSearch::pass()
 		{
 			double dotx = 0;
 			std::multimap< long double, std::pair<long double, long double>> function_results; //Контейнер упорядоченных значений для хранения значений функции
