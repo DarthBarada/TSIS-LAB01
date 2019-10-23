@@ -22,8 +22,7 @@ class GoldrenSection: public MyFunction
 		// Обычный конструктор
 		GoldrenSection(long double bottom, long double top, long double accuracy = 0.05);
 
-		~GoldrenSection()
-			{}
+		~GoldrenSection() = default;
 
 		void update_interval();
 

@@ -18,8 +18,7 @@ class OptimalPassiveSearch: public MyFunction
 			// Обычный конструктор, принимает на вход нижнюю границу, верхнюю и точность
 			OptimalPassiveSearch(double bottom, double top, double accuracy = 0.05);
 
-			~OptimalPassiveSearch()
-			{}
+			~OptimalPassiveSearch() = default; 
 
 			// Функция вычисляет погрешность
 			double length_of_undefined_segment(int N);
