@@ -6,17 +6,17 @@
 
 class OptimalPassiveSearch: public MyFunction
 	{
-		long double  top_edge;			   // Верхняя граница отрезка
-		long double  bottom_edge;		 	 // Нижняя граница отрезка
-		long double  delta;			   	 	 // Точность
+		double  top_edge;			   // Верхняя граница отрезка
+		double  bottom_edge;		 	 // Нижняя граница отрезка
+		double  delta;			   	 	 // Точность
 	 	unsigned int Value_N;					 //
-		std::pair<long double, long double> point; // Конечная точка и интервал
+		std::pair<double,double> point; // Конечная точка и её значение
 		std::chrono::nanoseconds timer;	           // Время нахождения оптимального интервала
 		public:
 
 
 			// Обычный конструктор, принимает на вход нижнюю границу, верхнюю и точность
-			OptimalPassiveSearch(long double bottom, long double top, long double accuracy = 0.05);
+			OptimalPassiveSearch(double bottom, double top, double accuracy = 0.05);
 
 			~OptimalPassiveSearch()
 			{}
@@ -26,5 +26,5 @@ class OptimalPassiveSearch: public MyFunction
 
 			// Функция проводит все необходимые вычисления
 			void pass();
-			void pass2();
+			void test_pass();
 	};
